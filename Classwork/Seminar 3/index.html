@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Задание 1 (тайминг 20 минут)
+        // Текст задания
+        // 1. Написать функцию, которой передаем, имя, фамилия и
+        // возраст, и получаем строку "Привет Иван Петров с
+        // возрастом 17" (только здесь данные, которые были
+        // переданы в функцию)
+
+        function helloUser(name, surname, age) {
+            console.log(`Привет, ${name} ${surname} с возрастом ${age}`);
+        }
+
+        helloUser('Николай', 'Гаврилов', 28);
+
+        // //         2. Создайте функцию которая возводит переданное число в
+        // //         квадрат
+        const squaredValue = (param) => param ** 2;
+        console.log(squaredValue(5));
+
+        // //         3. Сделайте функцию, которая параметром принимает
+        // // число и проверяет, положительное это число или
+        // //         отрицательное.В первом случае пусть функция выводит
+        // // в консоль текст '+++', а во втором '---'.
+        function checkPositiveOrNegative(num) {
+            // if (num >= 0) {
+            //     result = '+++';
+            // } else {
+            //     result = '---';
+            // }
+            // return result;
+            (num >= 0) ? result = '+++' : result = '---';
+            return result;
+        }
+        console.log(checkPositiveOrNegative(-5));
+        console.log(checkPositiveOrNegative(7));
+
+        // Задание 2 (тайминг 15 минут)
+        // 1. Сделайте функцию, которая параметрами принимает 3 числа и
+        // выводит в консоль сумму этих чисел.
+
+        function summThreeNums(num1, num2, num3) {
+            return num1 + num2 + num3;
+        }
+        console.log(summThreeNums(100, 200, 300));
+
+        const summofThreeNums = (num1, num2, num3) => +num1 + +num2 + +num3;
+        console.log(summofThreeNums(20, 20, 40));
+
+        // // 2. С помощью созданной вами функции выведите в консоль сумму
+        // // значений этих переменных.
+        let param1 = '1';
+        let param2 = 2;
+        let param3 = 3;
+        console.log(summofThreeNums(param1, param2, param3));
+
+        // // 1. Дана фукнция
+        function func(num = 5) {
+            console.log(num * num);
+        }
+        // // Расскажите, каким будет результат каждого из вызовов функции.
+        func(2);
+        func(3);
+        func();
+
+
+        // Задание 3(тайминг 15 минут)
+        // 1. Сделайте функцию (Math.sqrt(x)), которая параметром принимает число,
+        // а возвращает квадратный корень из этого числа. С помощью этой функции найдите корень числа 3,
+        // затем найдите корень числа 4. Просуммируйте полученные результаты и
+        // выведите их в консоль (используя функцию суммы). (3.732050807568877).
+        const root = num => Math.sqrt(num);
+        console.log(root(3));
+        console.log(root(4));
+        console.log(root(3) + root(4));
+        //         2. Создайте функцию, которая находит минимальное число из 2х передаваемых аргументов функции
+        function findMin(num1, num2) {
+            (num1 < num2) ? console.log(`Минимальное число ${num1}`) : console.log(`Минимальное число ${num2}`);
+        }
+        findMin(-1, 1);
+
+        const minNum = (num1, num2) => (num1 < num2) ? num1 : num2;
+        console.log(minNum(-2, 2));
+
+        // Задание 4 (тайминг 25 минут)
+        // 1. Сделайте функцию, которая принимает параметром число от 1 до 7,
+        // а возвращает день недели на русском языке.
+
+        function dayOfWeek(num) {
+            if (num === 1) {
+                result = 'понедельник';
+            } else if (num === 2) {
+                result = 'вторник';
+            } else if (num === 3) {
+                result = 'среда';
+            } else if (num === 4) {
+                result = 'четверг';
+            } else if (num === 5) {
+                result = 'пятница';
+            } else if (num === 6) {
+                result = 'суббота';
+            } else if (num === 7) {
+                result = 'воскресенье';
+            }
+            console.log(result);
+        }
+        dayOfWeek(1);
+        dayOfWeek(3);
+        dayOfWeek(5);
+        dayOfWeek(7);
+        // // 2. Написать функцию, которой передаем имя и она возвращает
+        // // приветствие в зависимости от времени суток (Доброе
+        // // утро\день\вечер\ночи Иван)
+        function helloUserTime(userName) {
+            let time = Number(new Date().getHours());
+            if (time > 6 && time < 12) {
+                console.log("Доброе утро, " + userName);
+            } else if (time > 12 && time < 18) {
+                console.log("Добрый день, " + userName);
+            } else if (time > 18 && time < 23) {
+                console.log("Добрый вечер, " + userName);
+            } else {
+                console.log("Доброй ночи, " + userName);
+            }
+        }
+
+        helloUserTime('Николай')
+
+        // Задание 5*
+        // Написать функцию, в которую передаем 2 аргумента, первое это вопрос на любую загадку, 
+        // второе это ответ на данную загадку, необходимо сравнить ответ пользователя на загадку и вернуть, true или false значение
+        // Добавить подсказку, если пользователь ответил неверно
+
+        let question = 'Зимой и летом одним цветом. Что это?';
+        let answer = prompt(question);
+        function puzzle(question, answer) {
+            if (answer === 'елка'.toLowerCase()) {
+                return true;
+            } else {
+                let question2 = 'Она с иголками';
+                let answer2 = prompt(question2);
+                if (answer2 === 'елка'.toLowerCase()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+        console.log(puzzle(question, answer));
+
+    </script>
+</body>
+
+</html>
