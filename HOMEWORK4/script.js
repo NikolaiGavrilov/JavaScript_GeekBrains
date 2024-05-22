@@ -109,7 +109,7 @@ console.log(`Результат проверки на наличие иском�
 // xxxxx
 
 function drawMountain(amountOfRows, symbolToDrawWith) {
-    let drawing = '';
+    let drawing = '\n';
     for (let index = 0; index < amountOfRows; index++) {
         drawing += "+";
         for (let j = 0; j < index; j++) {
