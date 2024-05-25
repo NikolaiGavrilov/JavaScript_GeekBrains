@@ -117,7 +117,7 @@ console.log(productsFiltered);
 const productsSorted = products1.sort(function (a, b) {
     return a.price - b.price;
 });
-console.log(products1);
+console.log(productsSorted);
 
 // **Задание 5**
 // Дано 2 массива
